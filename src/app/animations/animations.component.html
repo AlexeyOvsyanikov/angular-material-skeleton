@@ -1,1 +1,43 @@
-<p>animations works!</p>
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Opacity and scale animation">
+    <div class="animation-container">
+      <div [@scaleAnimation]="opacityAndScaleAnimationRun ? 'scale-start' : 'scale-end'" class="first-animated-block">
+        <div [@opacityAnimation]="opacityAndScaleAnimationRun ? 'big-font' : 'small-font'" >Your text here</div>
+      </div>
+
+      <div style="margin-top: 10px;">
+        <button (click)="toggleOpacityAndScaleAnimation()" mat-raised-button color="primary">Start Animation</button>
+      </div>
+  </div>
+  </mat-tab>
+  <mat-tab label="Move animation">
+    <div [@moveAnimation]="moveAnimationRun ? 'right' : 'left'" class="second-animated-block"></div>
+    <div class="animation-container">
+      <div style="margin-top: 10px;">
+        <button (click)="toggleMoveAnimation()" mat-raised-button color="primary">Start Animation</button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Search items animation">
+    <div style="display: flex; justify-content: center;">
+      <form style="width: 35%; display: flex; justify-content: center; margin-top: 10px; background-color: bisque; padding: 5px;">
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input type="text"
+                 placeholder="Pick Moscow"
+                 aria-label="City"
+                 matInput
+                 [formControl]="searchControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option [@searchAnimation]="searchAnimationRun ? 'start' : 'end'" *ngFor="let city of filteredCities | async" [value]="city.title">
+              {{city.title}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>
+

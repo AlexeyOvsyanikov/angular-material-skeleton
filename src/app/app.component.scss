@@ -1,0 +1,48 @@
+.mat-drawer-container{
+  height: 100%;
+}
+
+.mat-drawer{
+  width: 300px;
+}
+
+.link {
+
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+
+}
+
+.link-wrapper{
+
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+  transition: 1s ease;
+
+  &:hover{
+    background-color: rgba(128, 128, 128, 0.555);
+    transition: 1s ease;
+  }
+
+}
+
+.active-link {
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: rgba(128, 128, 128, 0.555);
+}
+
+
+@media screen and (max-width: 280px){
+  .mat-drawer{
+    width: 220px;
+  }
+
+  .app-title{
+    font-size: 17px;
+  }
+}

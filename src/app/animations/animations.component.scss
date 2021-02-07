@@ -1,0 +1,30 @@
+.animation-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+
+.first-animated-block {
+
+  width: 0px;
+  height: 0px;
+  background: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    font-size: 25px;
+  }
+}
+
+.second-animated-block {
+  margin-top: 10px;
+  width: 300px;
+  height: 300px;
+  background: bisque;
+}
